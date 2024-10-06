@@ -1,10 +1,11 @@
-import Home from "./Home";
+import { Outlet } from "react-router-dom";
+// import Home from "./Home";
 
 
 const Body =()=>{
     return (
         <div>
-           <Home/>
+           <Outlet/>
         </div>
     );
 }

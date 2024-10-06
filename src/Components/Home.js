@@ -4,7 +4,7 @@ import SecondContainer from "./SecondContainer";
 const Home =()=>{
 
     return (
-        <div className="mx-24  bg-gray-200">
+        <div className="mx-24  h-screen ">
              <FirstContainer/>
              <SecondContainer/>
         </div>
