@@ -16,7 +16,7 @@ function App() {
           element:<Home/>
         },
         {
-          path:"/restaurant",
+          path:"/restaurant/:resId",
           element:<ItemPage/>
         }
       ]

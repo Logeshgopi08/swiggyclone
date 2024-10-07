@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import ButtonList from "./ButtonList";
+import { Link } from "react-router-dom";
 
 const SecondContainer = () => {
     const [reslist,setResList] = useState([]);
@@ -9,7 +10,7 @@ const SecondContainer = () => {
           "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=13.0843007&lng=80.2704622&carousel=true&third_party_vendor=1"
         );
         const json = await data.json();
-       console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+      //  console.log(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants);
        const ResList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setResList(ResList);
         
@@ -30,7 +31,7 @@ const SecondContainer = () => {
         <div className="flex flex-wrap">
             <div className="flex  flex-wrap">
               {reslist.length>0 && reslist.map((res)=>{
-                return <RestaurantCard key={res.info.id} data={res.info}/>
+                return <Link key={res.info.id} to={"/restaurant/"+res.info.id}> <RestaurantCard  data={res.info}/> </Link>
               })}
             </div>
         </div>
