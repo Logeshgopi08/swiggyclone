@@ -3,6 +3,8 @@ import Body from "./Components/Body";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import ItemPage from "./Components/ItemPage";
+import { Provider } from "react-redux";
+import appStore from "./utlis/redux/appStore";
 
 function App() {
 
@@ -23,10 +25,12 @@ function App() {
     }
   ])
   return (
+    <Provider store={appStore}>
     <div className="">
       <Header/>
       <RouterProvider router={appRouter}/>
     </div>
+    </Provider>
   );
 }
 

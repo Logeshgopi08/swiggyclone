@@ -2,9 +2,10 @@ import { useState } from "react";
 import SpecificItem from "./SpecificItem";
 
 const ResCategory =({data})=>{
-       
         
-     const {title,itemCards} =data?.card;
+    const {title,itemCards} =data;
+    
+    
     
     const [showItems,setShowItems] = useState(false);
 
@@ -16,7 +17,9 @@ const ResCategory =({data})=>{
                 <button onClick={()=>setShowItems(!showItems)} >Show</button>
             </div >
             { showItems &&<div className="mt-5">
-            <SpecificItem data={itemCards[0]}/>
+            {itemCards.map((item)=>{
+                return <SpecificItem key={item?.card?.info?.id} data={item?.card?.info}/>
+            })}
             </div>}
             </div>
         </div>
