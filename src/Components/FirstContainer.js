@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ImageCard from "./ImageCard";
 import { info } from "../utlis/constant";
 import RestaurantCard from "./RestaurantCard";
+import { Link } from "react-router-dom";
 
 const FirstContainer = () => {
     const[topres,setTopRes] = useState([]);
@@ -41,7 +42,7 @@ const FirstContainer = () => {
           <div className="flex overflow-x-scroll no-scrollbar">
           <div className="flex" >
            {topres.length>0 && topres.map((res)=>{
-            return <RestaurantCard key={res.info.id} data= {res.info}/>
+            return <Link key={res.info.id} to={"/restaurant/"+res.info.id}> <RestaurantCard  data= {res.info}/> </Link>
            })}
           </div>
           </div>

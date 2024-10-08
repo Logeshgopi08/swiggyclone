@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Header = ()=>{
     
@@ -12,10 +13,10 @@ const Header = ()=>{
             </div>
             <div>
                 <ul className="flex">
-                   <a href="/home"> <li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">Home</li> </a>
+                   <Link to={"/home"}> <li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">Home</li> </Link>
                     <li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">Offers</li>
                     <li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">Help</li>
-                    <li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">Cart ({cartStore.length})</li>
+                    <Link to={"/cart"}><li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">Cart ({cartStore.length})</li></Link>
                     <li className="text-lg text-gray-400 mx-3 px-3 font-semibold hover:text-orange-600">SignIn</li>
                 </ul>
             </div>

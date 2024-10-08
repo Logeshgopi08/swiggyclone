@@ -8,9 +8,9 @@ const SpecificItem = ({data})=>{
 
      const {rating,ratingCountV2} = ratings?.aggregatedRating;
 
-       const itemDetail = [name,price/100];
+      
       const handleAddCart=()=>{
-        dispatch(addItems(itemDetail));
+        dispatch(addItems(data));
         
       }
 
@@ -22,7 +22,7 @@ const SpecificItem = ({data})=>{
                     <ul className="px-2">
                         <h1 className="pt-4 font-semibold text-lg">{name}</h1>
                         <h3 className="text-lg">Rs.{price/100}</h3>
-                        {ratings.aggregatedRating.length> 0 &&<p className="py-3 text-orange-400 font-medium">{rating} ({ratingCountV2}) </p>}
+                        {<p className="py-3 text-orange-400 font-medium">{rating} ({ratingCountV2}) </p>}
                         <p className="font-medium text-gray-950">{description}</p>
                     </ul>
                 </div>

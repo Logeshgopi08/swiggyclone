@@ -5,6 +5,7 @@ import Home from "./Components/Home";
 import ItemPage from "./Components/ItemPage";
 import { Provider } from "react-redux";
 import appStore from "./utlis/redux/appStore";
+import CartPage from "./Components/CartPage";
 
 function App() {
 
@@ -20,6 +21,10 @@ function App() {
         {
           path:"/restaurant/:resId",
           element:<ItemPage/>
+        },
+        {
+          path:"/cart",
+          element:<CartPage/>
         }
       ]
     }
@@ -27,7 +32,7 @@ function App() {
   return (
     <Provider store={appStore}>
     <div className="">
-      <Header/>
+      
       <RouterProvider router={appRouter}/>
     </div>
     </Provider>

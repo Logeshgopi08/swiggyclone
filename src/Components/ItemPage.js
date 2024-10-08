@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import DetailContainer from "./DetailContainer";
 import { useParams } from "react-router-dom";
@@ -29,8 +30,9 @@ const ItemPage = ()=>{
        c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"  
     );
 
+    // console.log(resMenuData);
     
-    console.log(resCategory);
+    // console.log(resCategory);
     
     
 
